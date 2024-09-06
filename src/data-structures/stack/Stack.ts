@@ -1,7 +1,7 @@
 // src/data-structures/Stack.ts
 class Stack<T> {
     private items: T[] = [];
-  
+
     push(item: T): void {
       this.items.push(item);
     }
