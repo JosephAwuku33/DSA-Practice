@@ -73,6 +73,27 @@ class SinglyLinkedList<T> {
       current = current.next;
     }
   }
+
+
+  reverseListIteratively(): LinkedListNode<T> | null {
+    let previous: LinkedListNode<T> | null = null;
+    let current: LinkedListNode<T> | null = this.head;
+    let next: LinkedListNode<T> | null = null;
+
+
+    while ( current !== null){
+       
+      next = current.next;
+
+      current.next = previous;
+
+      previous = current;
+      current = next;
+    }
+
+    this.head = previous;
+    return this.head;
+  }
 }
 
 export { LinkedListNode, SinglyLinkedList };
