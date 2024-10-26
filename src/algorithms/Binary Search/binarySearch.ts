@@ -11,7 +11,7 @@ export function binarySearch(arr: number[], target: number): number {
         } else if ( arr[mid] < target){
             left = mid + 1; // Target is in the right half
         } else {
-            right = mid - 1;
+            right = mid - 1; // Target is in the left half
         }
     }
 
