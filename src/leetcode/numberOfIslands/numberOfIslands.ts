@@ -35,3 +35,41 @@ export default function numberOfIslands(grid: string[][]): number {
   }
   return islandCount;
 }
+
+export function numberOfIslandsImplementation(grid: string[][]): number {
+  let islandCount = 0;
+  let rows = grid.length;
+  let columns = grid[0].length;
+
+  function dfs(row: number, column: number) {
+    // Check the boundaries
+    if (
+      row >= rows ||
+      column >= columns ||
+      grid[row][column] === "0" ||
+      row < 0 ||
+      column < 0
+    )
+      return;
+
+    // mark the current element traversed as visited
+    grid[row][column] = "0";
+
+    // recursively going through the nearby values
+    dfs(row - 1, column);
+    dfs(row + 1, column);
+    dfs(row, column - 1);
+    dfs(row, column + 1);
+  }
+
+  for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < columns; j++) {
+      if (grid[i][j] === "1") {
+        islandCount++;
+        dfs(i, j);
+      }
+    }
+  }
+
+  return islandCount;
+}

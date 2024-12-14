@@ -38,11 +38,6 @@ describe("Number of Islands", () => {
     expect(numberOfIslands(grid)).toBe(5);
   });
 
-//   it("should handle empty grid", () => {
-//     const grid: string[][] = [];
-//     expect(numberOfIslands(grid)).toBe(0);
-//   });
-
   it("should handle grid with single row", () => {
     const grid = [["1", "0", "1", "1", "0", "1", "0"]];
     expect(numberOfIslands(grid)).toBe(3);
